@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import 
+        "mixins",
+        "functions",
+        "variables",
+        "buttons",
+        "type",
+        "reboot",
+        "grid",
+        "utilities",
+        "forms";
+
+
+.chart 
+{
+    height: 400px;
+    width: 100%;
+}

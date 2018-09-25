@@ -1,0 +1,28 @@
+
+<form *ngIf="!inProgress">
+    <div class="row mb-4">
+        <div class="col-3">
+            <select name="temp_start" id="temp_start" class="form-control" (change)="tempDateChange()" [(ngModel)]="startDate">
+                <option *ngFor="let date of dates">{{date}}</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <select name="temp_end" id="temp_end" class="form-control" (change)="tempDateChange()" [(ngModel)]="endDate">
+                <option *ngFor="let date of dates">{{date}}</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+
+<div class="d-flex w-100 justify-content-center align-items-center" *ngIf="inProgress">
+    <mat-progress-spinner
+        class="example-margin"
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+    </mat-progress-spinner>
+</div>
+
+
+<div id="Температура" [hidden]="inProgress" [class.d-none]="inProgress" class="chart"></div>

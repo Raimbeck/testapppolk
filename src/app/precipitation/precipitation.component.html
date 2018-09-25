@@ -1,0 +1,25 @@
+<form>
+    <div class="row mb-4" *ngIf="!inProgress">
+        <div class="col-3">
+            <select name="prec_start" id="prec_start" class="form-control" [class.disabled]="inProgress" (change)="precDateChange()" [(ngModel)]="startDate">
+                <option *ngFor="let date of dates">{{date}}</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <select name="prec_end" id="prec_end" class="form-control" (change)="precDateChange()" [(ngModel)]="endDate">
+                <option *ngFor="let date of dates">{{date}}</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+<div class="d-flex w-100 justify-content-center align-items-center" *ngIf="inProgress">
+    <mat-progress-spinner
+        class="example-margin"
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+    </mat-progress-spinner>
+</div>
+    
+<div class="chart" id="Осадки" [class.d-none]="inProgress"></div>

@@ -1,0 +1,13 @@
+<main>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-3">
+        <a routerLink="/" [routerLinkActiveOptions]="{exact: true}" class="btn btn-outline-primary btn-block" routerLinkActive="active">Температура</a>
+        <a routerLink="/precipitation" class="btn btn-outline-primary btn-block" routerLinkActive="active">Осадки</a>
+      </div>
+      <div class="col-9">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
